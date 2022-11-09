@@ -6,7 +6,8 @@
 			"extensions": [
 				"streetsidesoftware.code-spell-checker",
 				"rust-lang.rust-analyzer",
-				"EditorConfig.EditorConfig"
+				"EditorConfig.EditorConfig",
+				"vadimcn.vscode-lldb"
 			]
 		}
 	}
