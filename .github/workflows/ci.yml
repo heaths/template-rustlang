@@ -1,0 +1,49 @@
+# Copyright 2022 Heath Stewart.
+# Licensed under the MIT License. See LICENSE.txt in the project root for license information.
+
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches:
+    - main
+  workflow_call:
+    inputs:
+      release:
+        description: Whether this is running as part of a release workflow.
+        required: false
+        type: boolean
+        default: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  CARGO_INCREMENTAL: 0
+  RUSTFLAGS: -Dwarnings
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os:
+        - macos-latest
+        - ubuntu-latest
+        - windows-latest
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up toolchain
+        run: rustup show
+      - name: Check formatting
+        if: ${{ success() && (!inputs.release || github.event_name != 'workflow_call') }}
+        run: cargo fmt --all -- --check
+      - name: Test
+        run: cargo test --all-features --workspace
+      - name: Lint
+        run: cargo clippy --all-features --all-targets --no-deps --workspace
+      - name: Build documentation
+        run: cargo doc --all-features --no-deps --workspace

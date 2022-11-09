@@ -1,0 +1,14 @@
+[package]
+name = "template"
+version = "0.1.0"
+edition = "2021"
+authors = [
+    "Heath Stewart (https://github.com/heaths)"
+]
+description = """
+A template repository for Rust projects.
+"""
+repository = "https://github.com/heaths/template-rustlang"
+license = "MIT"
+
+[dependencies]
