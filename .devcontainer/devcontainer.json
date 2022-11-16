@@ -1,14 +1,14 @@
 {
-	"name": "Rust",
-	"image": "mcr.microsoft.com/devcontainers/rust:1-buster",
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"streetsidesoftware.code-spell-checker",
-				"rust-lang.rust-analyzer",
-				"EditorConfig.EditorConfig",
-				"vadimcn.vscode-lldb"
-			]
-		}
-	}
+  "name": "Rust",
+  "image": "mcr.microsoft.com/devcontainers/rust:1-buster",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "streetsidesoftware.code-spell-checker",
+        "rust-lang.rust-analyzer",
+        "EditorConfig.EditorConfig",
+        "vadimcn.vscode-lldb"
+      ]
+    }
+  }
 }

@@ -1,4 +1,4 @@
 {
-    "rust-analyzer.cargo.features": "all",
-    "rust-analyzer.checkOnSave.command": "clippy"
+  "rust-analyzer.cargo.features": "all",
+  "rust-analyzer.checkOnSave.command": "clippy"
 }
