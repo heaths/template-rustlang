@@ -34,16 +34,16 @@ jobs:
         - windows-latest
     runs-on: windows-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Set up toolchain
-        run: rustup show
-      - name: Check formatting
-        if: ${{ success() && (!inputs.release || github.event_name != 'workflow_call') }}
-        run: cargo fmt --all -- --check
-      - name: Test
-        run: cargo test --all-features --workspace
-      - name: Lint
-        run: cargo clippy --all-features --all-targets --no-deps --workspace
-      - name: Build documentation
-        run: cargo doc --all-features --no-deps --workspace
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Set up toolchain
+      run: rustup show
+    - name: Check formatting
+      if: ${{ success() && (!inputs.release || github.event_name != 'workflow_call') }}
+      run: cargo fmt --all -- --check
+    - name: Test
+      run: cargo test --all-features --workspace
+    - name: Lint
+      run: cargo clippy --all-features --all-targets --no-deps --workspace
+    - name: Build documentation
+      run: cargo doc --all-features --no-deps --workspace
