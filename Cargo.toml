@@ -1,14 +1,8 @@
 [package]
-name = "template"
+name = "{{param "name" (param "github.repo") "What is your project name?" | lowercase}}"
 version = "0.1.0"
 edition = "2021"
-authors = [
-    "Heath Stewart (https://github.com/heaths)"
-]
-description = """
-A template repository for Rust projects.
-"""
-repository = "https://github.com/heaths/template-rustlang"
+repository = "https://github.com/{{param "github.owner"}}/{{param "github.repo"}}"
 license = "MIT"
 
 [dependencies]
