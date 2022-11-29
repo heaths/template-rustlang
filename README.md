@@ -2,7 +2,7 @@
 
 {{if (param "badges" true "Do you need badges?") -}}
 [![releases](https://img.shields.io/github/v/release/{{param "github.owner"}}/{{param "github.repo"}}.svg?logo=github)](https://github.com/{{param "github.owner"}}/{{param "github.repo"}}/releases/latest)
-[![docs](https://img.shields.io/docsrs/msica?logo=rust)](https://docs.rs/{{param "name"}})
+[![docs](https://img.shields.io/docsrs/{{param "name"}}?logo=rust)](https://docs.rs/{{param "name"}})
 [![ci](https://github.com/{{param "github.owner"}}/{{param "github.repo"}}/actions/workflows/ci.yml/badge.svg?event=push)](https://github.com/{{param "github.owner"}}/{{param "github.repo"}}/actions/workflows/ci.yml)
 {{- end -}}
 
