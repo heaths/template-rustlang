@@ -2,6 +2,6 @@
 // Licensed under the MIT License. See LICENSE.txt in the project root for license information.
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    println!("{}", template::say_hello(None));
+    println!("{}", {{param "name" | replace "-" "_"}}::say_hello(None));
     Ok(())
 }
