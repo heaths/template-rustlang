@@ -1,10 +1,16 @@
 # {{param "name" (param "github.repo") "What is your project name?" | titlecase}}
 
+{{if not (param "release" true "Do you want a release pipeline?") -}}
+{{deleteFile ".github/workflows/release.yml"}}
+{{- end -}}
+
 {{if (param "badges" true "Do you need badges?") -}}
+{{if (param "release") -}}
 [![releases](https://img.shields.io/github/v/release/{{param "github.owner"}}/{{param "github.repo"}}.svg?logo=github)](https://github.com/{{param "github.owner"}}/{{param "github.repo"}}/releases/latest)
+{{- end -}}
 [![docs](https://img.shields.io/docsrs/{{param "name"}}?logo=rust)](https://docs.rs/{{param "name"}})
 [![ci](https://github.com/{{param "github.owner"}}/{{param "github.repo"}}/actions/workflows/ci.yml/badge.svg?event=push)](https://github.com/{{param "github.owner"}}/{{param "github.repo"}}/actions/workflows/ci.yml)
-{{- end -}}
+{{- end}}
 
 <!-- {{if 0}} -->
 To create a new repository from this template repository for Rust projects,
@@ -32,7 +38,7 @@ subdirectory of the current directory named `<name>`.
 
 See [heaths/gh-template](https://github.com/heaths/gh-template) for more information
 about this GitHub CLI extension.
-<!-- {{end}} -->
+<!-- {{end -}} TODO -->
 
 ## License
 
