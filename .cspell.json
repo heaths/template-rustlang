@@ -1,6 +1,13 @@
 {
   "version": "0.2",
   "language": "en",
+  "useGitignore": true,
+  "ignorePaths": [
+    ".cspell.json",
+    ".github/",
+    ".vscode/",
+    "rust-toolchain.toml"
+  ],
   "words": [
     "clippy",
     "rustlang",
