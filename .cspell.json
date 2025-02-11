@@ -4,6 +4,7 @@
   "useGitignore": true,
   "ignorePaths": [
     ".cspell.json",
+    ".devcontainer/",
     ".github/",
     ".vscode/",
     "rust-toolchain.toml"
@@ -13,11 +14,30 @@
     "rustlang",
     "rustup"
   ],
+  "dictionaryDefinitions": [
+    {
+      "name": "crates",
+      "words": [],
+      "noSuggest": true
+    }
+  ],
   "overrides": [
+    {
+      "filename": "Cargo.toml",
+      "dictionaries": [
+        "crates"
+      ]
+    },
     {
       "filename": "**/*.md",
       "dictionaries": [
         "rust"
+      ]
+    },
+    {
+      "filename": "**/*.rs",
+      "dictionaries": [
+        "crates"
       ]
     }
   ]

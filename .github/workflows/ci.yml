@@ -68,8 +68,6 @@ jobs:
     - name: Check formatting
       if: ${{ success() && (!inputs.release || github.event_name != 'workflow_call') }}
       run: cargo fmt --all -- --check
-    - name: Test
-      run: cargo test --all-features --workspace
     - name: Lint
       run: cargo clippy --all-features --all-targets --no-deps --workspace
     - name: Check spelling

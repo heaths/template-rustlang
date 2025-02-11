@@ -1,6 +1,11 @@
 {
-  "name": "Rust",
-  "image": "mcr.microsoft.com/devcontainers/rust:1-buster",
+  "name": "ordinal-rs",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
   "customizations": {
     "vscode": {
       "extensions": [
@@ -11,5 +16,6 @@
         "vadimcn.vscode-lldb"
       ]
     }
-  }
+  },
+  "onCreateCommand": "rustup show"
 }
