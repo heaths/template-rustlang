@@ -1,6 +1,7 @@
 [package]
 name = "{{param "name" (param "github.repo") "What is your project name?" | lowercase}}"
 version = "0.1.0"
+readme = "README.md"
 edition = "2021"
 repository = "https://github.com/{{param "github.owner"}}/{{param "github.repo"}}"
 license = "MIT"
