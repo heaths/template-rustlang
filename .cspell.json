@@ -18,7 +18,9 @@
   "dictionaryDefinitions": [
     {
       "name": "crates",
-      "words": [],
+      "words": [
+        "{{param 'name'}}"
+      ],
       "noSuggest": true
     }
   ],
