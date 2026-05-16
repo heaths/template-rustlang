@@ -1,5 +1,5 @@
 {
-  "name": "ordinal-rs",
+  "name": "{{param 'name'}}",
   "build": {
     "dockerfile": "Dockerfile"
   },
@@ -17,5 +17,5 @@
       ]
     }
   },
-  "onCreateCommand": "rustup show"
+  "onCreateCommand": "rustup install"
 }
